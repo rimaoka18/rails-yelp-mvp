@@ -1,0 +1,15 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://media.giphy.com/media/SNBjuSQv7bjA7W5Wlb/giphy.gif');">
+</div>
+
+<div class="container">
+  <h1>Restaurants</h1>
+    <div class="cards">
+    <% @restaurants.each do |restaurant|%>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://loremflickr.com/320/240/food,<%= restaurant.category%>?lock=<%= restaurant.id %>)">
+        <%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none text-white" %>
+      </div>
+    <% end %>
+    </div>
+    <%= link_to "Add Restaurant", new_restaurant_path %>
+</div>
